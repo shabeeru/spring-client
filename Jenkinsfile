@@ -4,7 +4,7 @@ pipeline {
     maven 'maven'
   }
   environment {
-    LOGIN_URL = 'https://api.ocp4.example.com:6443'
+    LOGIN_URL = 'https://api.ocp4.example.com'
     LOGIN_PORT = '6443'
     PROJECT = 'springclient-ns'
   }  
