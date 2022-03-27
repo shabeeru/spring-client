@@ -20,7 +20,7 @@ pipeline {
     stage('Login') {
       steps {
         withCredentials(bindings: [usernamePassword(
-          		  credentialsId: 'openshift-login-creds', 
+          		  credentialsId: 'openshift-login-api-token', 
           		  usernameVariable: 'USERNAME',
           		  passwordVariable: 'PASSWORD',
           		)]) {
