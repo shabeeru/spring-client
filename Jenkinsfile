@@ -3,8 +3,8 @@ pipeline {
     label 'maven'
   }
   environment {
-    LOGIN_URL = 'https://c100-e.us-east.containers.cloud.ibm.com'
-    LOGIN_PORT = '30244'
+    LOGIN_URL = 'https://api.ocp4.example.com'
+    LOGIN_PORT = '6443'
     PROJECT = 'springclient-ns'
   }  
   stages {
@@ -15,7 +15,7 @@ pipeline {
           		  usernameVariable: 'USERNAME',
           		  passwordVariable: 'PASSWORD',
           		)]) {
-            sh "oc login ${env.LOGIN_URL}:${env.LOGIN_PORT} --token=${PASSWORD}"
+            sh "oc login ${env.LOGIN_URL}:${env.LOGIN_PORT} -u ${USERNAME} -p ${PASSWORD}"
           }
 
         }
