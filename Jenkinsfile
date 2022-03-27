@@ -20,9 +20,9 @@ pipeline {
     stage('Login') {
       steps {
         withCredentials(bindings: [usernamePassword(
-          		  credentialsId: 'openshift-login-api-token', 
-          		  usernameVariable: 'admin',
-          		  passwordVariable: 'redhat',
+          		  credentialsId: 'openshift-login-creds', 
+          		  usernameVariable: 'USERNAME',
+          		  passwordVariable: 'PASSWORD',
           		)]) {
           sh "oc login ${env.LOGIN_URL}:${env.LOGIN_PORT} --token=${PASSWORD}"
         }
